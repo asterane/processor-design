@@ -1,0 +1,32 @@
+Send Data
+=========
+Mode Select HIGH
+    -input from control unit
+Trigger
+    -input from control unit
+Interrupt HIGH
+    -Enable MISC buffer
+Mode HIGH
+    -Enable MISC buffer
+Recieve Device Code
+    -Enable MISC buffer
+    -input from control unit
+    -Disable MISC buffer
+Recieve ADDR data
+    -Enable ADDR OUT buffer
+    -recieved from SEND bus
+    -Disable ADDR OUT buffer
+Recieve DATA data
+    -Enable DATA OUT buffer
+    -recieved from SEND bus
+    -Disable DATA OUT buffer
+Select Device
+    -Enable DEV demux
+Drive data
+    -Enable ADDR OUT driver
+    -Enable DATA OUT driver
+    -Disable DATA OUT driver
+    -Disable ADDR OUT driver
+Reset
+    -Disable DEV demux
+    -Reset MISC buffer
