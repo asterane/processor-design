@@ -5,6 +5,7 @@
 :PROPERTIES:
 :UNNUMBERED: notoc
 :END:
+
 [[file:./diagrams/architecture.png]]
 
 #+TOC: headlines

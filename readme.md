@@ -1,5 +1,7 @@
 
 
+<a id="orgf20e33a"></a>
+
 # Digital Electronics Projects
 
 ![img](./diagrams/architecture.png)
@@ -7,25 +9,27 @@
 
 # Table of Contents
 
-1.  [Overview](#org6e693d4)
-2.  [16 Bit Processor Design](#orgca35b48)
-    1.  [Project Goals](#org5b5ec69)
-    2.  [Design](#orga11bb2b)
-        1.  [Bus Interface](#orga3b6e1a)
-        2.  [Arithmetic Logic Unit](#org54e89c5)
-        3.  [Register File](#org0bef5ed)
-        4.  [Comparator](#org2708806)
-        5.  [Buffer](#org1c35cd3)
-        6.  [Control Unit](#org2d86fa8)
-    3.  [Implementation](#orgf44c838)
-    4.  [Further Development](#orgc8d2edb)
-        1.  [Improvements](#org150fb0a)
-        2.  [Issues](#orgb7b5779)
-3.  [MC6802 System Design](#org96bb8e3)
-    1.  [Project Goals](#orga7b33c4)
-    2.  [Design](#org447faf6)
-    3.  [Implementation](#org09e465d)
+1.  [Overview](#org1a573a4)
+2.  [16 Bit Processor Design](#orgfbf6110)
+    1.  [Project Goals](#org7253817)
+    2.  [Design](#org3df4488)
+        1.  [Bus Interface](#org5e83226)
+        2.  [Arithmetic Logic Unit](#org949566b)
+        3.  [Register File](#org9582245)
+        4.  [Comparator](#orgdb2ae5e)
+        5.  [Buffer](#org16c6a65)
+        6.  [Control Unit](#org8a7800a)
+    3.  [Implementation](#orgce77af2)
+    4.  [Further Development](#org23b4af3)
+        1.  [Improvements](#org2527874)
+        2.  [Issues](#org01febd6)
+3.  [MC6802 System Design](#orgc2fa4e1)
+    1.  [Project Goals](#orge905517)
+    2.  [Design](#orgbe99439)
+    3.  [Implementation](#orgdf3097c)
 
+
+<a id="org1a573a4"></a>
 
 # Overview
 
@@ -46,6 +50,8 @@ processor, and demonstrate various algorithms, including multiply,
 divide, and basic audio processing.
 
 
+<a id="orgfbf6110"></a>
+
 # 16 Bit Processor Design
 
 Most of this top level directory is devoted to my processor design
@@ -60,6 +66,8 @@ pencil sketches and diagrams. The `schematics` directory contains full
 schematics of the parts which made it to a final design phase, and my
 Kicad project folder.
 
+
+<a id="org7253817"></a>
 
 ## Project Goals
 
@@ -84,6 +92,8 @@ Kicad project folder.
 -   Construct a complete processor and demonstrate it running code to
     complete some task
 
+
+<a id="org3df4488"></a>
 
 ## Design
 
@@ -114,6 +124,8 @@ Finally, the control unit reads instructions and orchestrates the
 function of every other part of the processor to ensure that the
 programs provided by a user are executed without error.
 
+
+<a id="org5e83226"></a>
 
 ### Bus Interface
 
@@ -349,6 +361,8 @@ included an interrupt handling system to allow interrupts to be
 classified and dealt with as quickly as possible.
 
 
+<a id="org949566b"></a>
+
 ### Arithmetic Logic Unit
 
 Processing, in essence, is performing mathematical operations on
@@ -461,6 +475,8 @@ processor while the ALU is working. This would allow rudimentary
 pipelining, or overlapping instruction execution.
 
 
+<a id="org9582245"></a>
+
 ### Register File
 
 A processor must store the data it is using at any given time, as well
@@ -564,6 +580,8 @@ receives an interrupt. State is stored, an interrupt routine runs, and
 the stack is used to resume the previous program where it left off.
 
 
+<a id="orgdb2ae5e"></a>
+
 ### Comparator
 
 Comparisons between values are essential to the control flow of a
@@ -645,6 +663,8 @@ the register is positive. The program counter is then loaded with the
 address or not depending on the instruction and the result.
 
 
+<a id="org16c6a65"></a>
+
 ### Buffer
 
 There are two sixteen bit wide buses in my processor design: one for
@@ -688,6 +708,8 @@ synchronized. An alternative behavior would be for the buffer to
 capture a value from the SEND bus and drive it onto the ADDR bus at a
 later, more convenient, time.
 
+
+<a id="org8a7800a"></a>
 
 ### Control Unit
 
@@ -984,6 +1006,8 @@ system can be understood and efficiently used by an individual, it is
 essential to avoid intractable layers of complexity.
 
 
+<a id="orgce77af2"></a>
+
 ## Implementation
 
 Only certain parts of the processor have been implemented. The bus
@@ -1025,6 +1049,8 @@ examining FPGA system behavior as a set of waveforms, in a similar
 manner to an oscilloscope.
 
 
+<a id="org23b4af3"></a>
+
 ## Further Development
 
 Building my own processor has long struck me as a valuable way to
@@ -1037,6 +1063,8 @@ compiler. This project is unlikely to yield any insights that seasoned
 chip designers have not already had, but it will provide useful
 background for my own future projects.
 
+
+<a id="org2527874"></a>
 
 ### Improvements
 
@@ -1084,6 +1112,8 @@ are free, but a latch inside the buffer would enable taking data from
 a bus on one clock and waiting to drive it to the other.
 
 
+<a id="org01febd6"></a>
+
 ### Issues
 
 This processor, like nearly all processors that have ever been
@@ -1124,6 +1154,8 @@ wholly new architectures may be designed without requiring wholly new
 electronics technology.
 
 
+<a id="orgc2fa4e1"></a>
+
 # MC6802 System Design
 
 My project to build a computer around the MC6802 was part of a
@@ -1134,6 +1166,8 @@ is documented only in my handwritten notes and machine code program
 listings, particularly because a pandemic abruptly ended the school
 year before we could really pull our projects together.
 
+
+<a id="orge905517"></a>
 
 ## Project Goals
 
@@ -1156,6 +1190,8 @@ year before we could really pull our projects together.
 -   Implement a computer with interrupts and run a program that performs
     simple audio processing
 
+
+<a id="orgbe99439"></a>
 
 ## Design
 
@@ -1205,6 +1241,8 @@ then entered it into a piece of software integrated with the
 writer. After verifying that the entered bytes were correct, I
 confirmed the transaction and the ROM was flashed with my new program.
 
+
+<a id="orgdf3097c"></a>
 
 ## Implementation
 
